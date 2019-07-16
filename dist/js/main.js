@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     data: {
       googleSpreadsheetKey: '1lIvfnaL4AJY_QmTCBujZzZaBNYKxDzanaorY2IHJ8ZY',
-      startRow: 1,
+      startRow: 3,
       endRow: 9
     },
     plotOptions: {
