@@ -17,14 +17,23 @@ document.addEventListener('DOMContentLoaded', function () {
             text: null
         },
         data: {
-            googleSpreadsheetKey: '1YOKb5l2VM4aAB2r20N_1aT_1vEajYrP3U-U3A6lZbC0'
+            googleSpreadsheetKey: '1lIvfnaL4AJY_QmTCBujZzZaBNYKxDzanaorY2IHJ8ZY',
+            startRow: 1,
+            endRow: 9
+        },
+        plotOptions: {
+            bar: {
+                groupPadding: .1
+            }
         },
         legend: {
             align: 'right',
             symbolRadius: 0,
             verticalAlign: 'top',
             x: 10,
-            itemMarginTop: -10
+            itemMarginBottom: 5,
+            floating: true,
+            layout: 'vertical'
         },
         xAxis: {
             labels: {
@@ -37,15 +46,21 @@ document.addEventListener('DOMContentLoaded', function () {
             title: false,
             labels: {
                 useHTML: true,
-                overflow: 'allow'
-            }
+                overflow: 'allow',
+                formatter: function () {
+                    return (this.value).toLocaleString();;
+                }
+            },
+            max: 1800,
+            tickAmount: 7
         },
         credits: {
             enabled: false
         },
         tooltip: {
             shadow: false,
-            padding: 10
+            padding: 10,
+            valuePrefix: '$'
         },
         responsive: {
             rules: [{
@@ -54,11 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
               },
               chartOptions: {
                 chart: {
-                  spacingRight: 10
-                },
-                legend: {
-                    align: 'left',
-                    x: -18
+                  spacingRight: 20
                 },
                 tooltip: {
                     enabled: false
